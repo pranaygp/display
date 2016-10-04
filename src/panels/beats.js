@@ -11,13 +11,24 @@ var BeatsPanel = React.createClass({
     getInitialState: function() {
         return {
             nowPlaying: null,
-            artError: false
+            artError: false,
+            error: null
         };
     },
 
     updateNowPlaying: function() {
-        $.get(nowPlayingUrl, function(data) {
-            this.setState({nowPlaying: data});
+        $.ajax({
+            url: nowPlayingUrl,
+            timeout: 5000,
+        })
+        .done(function(data) {
+            this.setState({
+                nowPlaying: data,
+                error: null
+            });
+        }.bind(this))
+        .fail(function(xhr, status, errorThrown) {
+            this.setState({error: errorThrown});
         }.bind(this));
     },
 
@@ -27,8 +38,9 @@ var BeatsPanel = React.createClass({
     },
 
     componentDidUpdate: function(prevProps, prevState) {
-        if (!prevState.nowPlaying ||
-            prevState.nowPlaying.media.art_uri != this.state.nowPlaying.media.art_uri) {
+        if (!this.state.error &&
+            (!prevState.nowPlaying ||
+             prevState.nowPlaying.media.art_uri != this.state.nowPlaying.media.art_uri)) {
         this.setState({artError: false});
         }
     },
@@ -61,10 +73,15 @@ var BeatsPanel = React.createClass({
     },
 
     render: function() {
+        var error = this.state.error;
         var nowPlaying = this.state.nowPlaying;
 
         var body = null;
-        if (nowPlaying) {
+        if (error) {
+            body = <div className="panel-body beats-error-body">
+                <p>Error fetching Now Playing from Beats: {error}</p>
+            </div>;
+        } else if (nowPlaying) {
             var elapsed = nowPlaying.player_status.current_time / 1000;
             var elapsedStr = this.getTimeString(elapsed);
             var duration = nowPlaying.media.length;
