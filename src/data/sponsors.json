@@ -1,8 +1,33 @@
 [
     {
         "name": "Palantir",
-        "level": "Gold",
+        "level": "Diamond",
         "logoPath": "img/sponsors/palantir.png"
+    },
+    {
+        "name": "Wish",
+        "level": "Diamond",
+        "logoPath": "img/sponsors/wish.png"
+    },
+    {
+        "name": "Capital One",
+        "level": "Diamond",
+        "logoPath": "img/sponsors/capital-one.png"
+    },
+    {
+        "name": "Sunrise Futures",
+        "level": "Gold",
+        "logoPath": "img/sponsors/sunrise-futures.jpg"
+    },
+    {
+        "name": "Fitbit",
+        "level": "Gold",
+        "logoPath": "img/sponsors/fitbit.png"
+    },
+    {
+        "name": "Akuna Capital",
+        "level": "Gold",
+        "logoPath": "img/sponsors/akuna-capital.png"
     },
     {
         "name": "Qualtrics",
@@ -10,33 +35,13 @@
         "logoPath": "img/sponsors/qualtrics.png"
     },
     {
-        "name": "Sunrise Futures",
-        "level": "Silver",
-        "logoPath": "img/sponsors/sunrise-futures.jpg"
-    },
-    {
-        "name": "Fitbit",
-        "level": "Silver",
-        "logoPath": "img/sponsors/fitbit.png"
-    },
-    {
-        "name": "Akuna Capital",
-        "level": "Silver",
-        "logoPath": "img/sponsors/akuna-capital.png"
-    },
-    {
-        "name": "Capital One",
-        "level": "Bronze",
-        "logoPath": "img/sponsors/capital-one.png"
-    },
-    {
         "name": "Google",
-        "level": "Bronze",
+        "level": "Silver",
         "logoPath": "img/sponsors/google.png"
     },
     {
         "name": "Allston Trading",
-        "level": "Bronze",
+        "level": "Silver",
         "logoPath": "img/sponsors/allston-trading.png"
     }
 ]
