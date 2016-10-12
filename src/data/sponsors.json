@@ -30,6 +30,11 @@
         "logoPath": "img/sponsors/akuna-capital.png"
     },
     {
+        "name": "Amazon",
+        "level": "Gold",
+        "logoPath": "img/sponsors/amazon.png"
+    },
+    {
         "name": "Qualtrics",
         "level": "Silver",
         "logoPath": "img/sponsors/qualtrics.png"
