@@ -3,7 +3,7 @@ var classNames = require('classnames');
 
 var meetingTimes = require('../data/meeting-times.json');
 
-var ROWS_PER_PAGE = 10;
+var ROWS_PER_PAGE = 9;
 
 /**
  * Meeting times panel.
