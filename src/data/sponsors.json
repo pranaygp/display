@@ -48,5 +48,10 @@
         "name": "Allston Trading",
         "level": "Silver",
         "logoPath": "img/sponsors/allston-trading.png"
+    },
+    {
+        "name": "3Red",
+        "level": "Silver",
+        "logoPath": "img/sponsors/3red.jpg"
     }
 ]
