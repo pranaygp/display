@@ -37,7 +37,7 @@ var MeetingTimesPanel = React.createClass({
                 headers: {
                     'Authorization': secrets.grootAccessToken
                 }
-            }),
+            })
         ).done(function(sigs, committees) {
             this.setState({
                 groups: sigs[0].concat(committees[0]),
