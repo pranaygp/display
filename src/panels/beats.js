@@ -41,7 +41,7 @@ var BeatsPanel = React.createClass({
         if (!this.state.error &&
             (!prevState.nowPlaying ||
              prevState.nowPlaying.media.art_uri != this.state.nowPlaying.media.art_uri)) {
-        this.setState({artError: false});
+            this.setState({artError: false});
         }
     },
 

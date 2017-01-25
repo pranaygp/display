@@ -20,7 +20,7 @@ var layout = require('./layout.json');
  * Top-level dashboard component.
  */
 var ACMDisplay = React.createClass({
-    onLayoutChange: function(currentLayout, layouts) {
+    onLayoutChange: function(currentLayout) {
         ipcRenderer.send('layout-changed', currentLayout);
     },
     render: function() {
@@ -31,7 +31,7 @@ var ACMDisplay = React.createClass({
         var panelDivs = panels.filter(function(panel) {
             return usedPanelIds.includes(panel.name);
         }).map(function(panel) {
-            return <div key={panel.name}>{React.createElement(panel.component)}</div>
+            return <div key={panel.name}>{React.createElement(panel.component)}</div>;
         });
         return <div>
             <Header />

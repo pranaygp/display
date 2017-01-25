@@ -11,7 +11,7 @@ var MEMES_INTERVAL_MS = 10 * 1000;
 var MemesPanel = React.createClass({
     getInitialState: function() {
         return {
-            memeUrl: "",
+            memeUrl: '',
             memeError: null
         };
     },

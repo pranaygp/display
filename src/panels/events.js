@@ -31,7 +31,7 @@ var EventsPanel = React.createClass({
             var events = data
                 .map(function(e) {
                     var start = moment(e.start_time);
-                    var end = moment(e.end_time)
+                    var end = moment(e.end_time);
                     return {
                         startDate: start,
                         endDate: end,
@@ -39,7 +39,7 @@ var EventsPanel = React.createClass({
                         name: e.name,
                         id: e.id,
                         location: e.place ? e.place.name : null
-                    }
+                    };
                 })
                 .filter(function(e) {
                     return e.startDate.isAfter(now);

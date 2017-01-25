@@ -3,7 +3,8 @@
     "version": "0.0.1",
     "author": "Kevin Wang <kevin@kevinwang.com>",
     "scripts": {
-        "build": "gulp"
+        "build": "gulp",
+        "lint": "./node_modules/eslint/bin/eslint.js src/**/*.js src/*.js main.js"
     },
     "repository": {
         "type": "git",
@@ -27,5 +28,9 @@
         "react-dom": "0.14.x",
         "react-grid-layout": "0.13.x",
         "vinyl-source-stream": "1.1.x"
+    },
+    "devDependencies": {
+        "eslint": "3.14.x",
+        "eslint-plugin-react": "6.9.x"
     }
 }
