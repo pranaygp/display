@@ -20,6 +20,11 @@ var layout = require('./layout.json');
  * Top-level dashboard component.
  */
 var ACMDisplay = React.createClass({
+    componentWillMount: function() {
+        window.onerror = function(err) {
+            ipcRenderer.send('renderer-error', err);
+        };
+    },
     onLayoutChange: function(currentLayout, layouts) {
         ipcRenderer.send('layout-changed', currentLayout);
     },
