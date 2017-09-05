@@ -42,7 +42,7 @@ function createWindow () {
                     y: widget.y,
                     w: widget.w,
                     h: widget.h
-                }
+                };
             }), undefined, 4);
             fs.writeFile('./current_layout.json', layoutJSON);
         }

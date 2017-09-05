@@ -1,11 +1,10 @@
-var Header = require('./header');
 var AdsPanel = require('./panels/ads');
 var BeatsPanel = require('./panels/beats');
 var MTDPanel = require('./panels/mtd');
 var MeetingTimesPanel = require('./panels/meeting-times');
 var SponsorsPanel = require('./panels/sponsors');
 var EventsPanel = require('./panels/events');
-var MemesPanel = require('./panels/memes')
+var MemesPanel = require('./panels/memes');
 
 
 module.exports = [

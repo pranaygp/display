@@ -1,6 +1,5 @@
 var React = require('react');
 var $ = require('jquery');
-var async = require('async');
 var classNames = require('classnames');
 
 var secrets = require('../secrets');

@@ -15,7 +15,7 @@ exports.formatTime = function(date, dropMinutes) {
     var ampm = date.hour() < 12 ? 'AM' : 'PM';
 
     return hours + (dropMinutes ? '' : ':' + mins) + ' ' + ampm;
-}
+};
 
 exports.formatMeetingDate = function(date) {
     date = moment(date, 'dddd', true);
@@ -23,4 +23,4 @@ exports.formatMeetingDate = function(date) {
         return undefined;
     }
     return date.format('ddd');
-}
+};

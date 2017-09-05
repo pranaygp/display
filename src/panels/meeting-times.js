@@ -6,7 +6,7 @@ var moment = require('moment');
 
 var secrets = require('../secrets.js');
 var sigsURL = secrets.grootServicesURL + '/groups/sigs';
-var comitteesURL = secrets.grootServicesURL + '/groups/committees'
+var comitteesURL = secrets.grootServicesURL + '/groups/committees';
 
 var ROWS_PER_PAGE = 9;
 var REFRESH_TIMES_MS = 60 * 1000;
