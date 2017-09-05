@@ -1,6 +1,8 @@
 'use strict';
 
 const electron = require('electron');
+const log = require('electron-log');
+log.transports.file.file = __dirname + '/log.txt';
 const fs = require('fs');
 const ipcMain = electron.ipcMain;
 // Module to control application life.
@@ -44,6 +46,11 @@ function createWindow () {
             }), undefined, 4);
             fs.writeFile('./current_layout.json', layoutJSON);
         }
+    });
+
+    // Setup log capture from renderer process
+    ipcMain.on('renderer-error', function(event, error) {
+        log.error(error);
     });
 }
 
