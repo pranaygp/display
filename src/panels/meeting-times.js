@@ -3,6 +3,7 @@ var $ = require('jquery');
 var classNames = require('classnames');
 var time = require('../utils/time.js');
 var moment = require('moment');
+var chair = require('chair');
 
 var secrets = require('../secrets.js');
 var sigsURL = secrets.grootServicesURL + '/groups/sigs';
@@ -38,9 +39,9 @@ var MeetingTimesPanel = React.createClass({
                     'Authorization': secrets.grootAccessToken
                 }
             })
-        ).done(function(sigs, committees) {
+        ).done(function(sigs, committees, chair) {
             this.setState({
-                groups: sigs[0].concat(committees[0]),
+                groups: sigs[0].concat(committees[0], chair[0]),
                 error: null
             });
         }.bind(this), function(error){
@@ -76,12 +77,14 @@ var MeetingTimesPanel = React.createClass({
                 var meeting_time = moment(meeting.meetingTime, 'h:mm A', true);
                 meeting_time = meeting_time.isValid() ? time.formatTime(meeting_time, true) : undefined;
                 var meeting_date = time.formatMeetingDate(meeting.meetingDay) || meeting.meetingDay;
+		var sig_chairs = meeting.sigchairs;//this is super ghetto sorry about that where the db for the chirs is lol
                 var fulltime = (meeting_date && meeting_time) ?
                                (meeting_date + ', ' + meeting_time) : 'TBA';
                 return <tr key={meeting.name}>
                     <td>{meeting.name}</td>
                     <td>{location}</td>
                     <td>{fulltime}</td>
+		    <td>{chair}</td>
                 </tr>;
             });
 
@@ -101,6 +104,7 @@ var MeetingTimesPanel = React.createClass({
                             <th>Name</th>
                             <th>Location</th>
                             <th>Time</th>
+			    <th>Chair</th>
                         </tr>
                     </thead>
                     <tbody>
