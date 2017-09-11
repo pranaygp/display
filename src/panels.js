@@ -36,4 +36,7 @@ module.exports = [
         name: 'memes',
         component: MemesPanel
     }
+    {
+	name: 'chair',
+	component: MeetingTimesPanel
 ];
